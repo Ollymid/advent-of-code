@@ -1,4 +1,4 @@
-def list_from_file(filename):
+def list_from_file(filename) -> :
     with open(filename) as file:
         return [x.split(" ") for x in file.read().split("\n")]
 
@@ -17,7 +17,7 @@ def part_one(command_list):
         else:
             raise ValueError("Command not recognized!")
 
-    return final_position, final_depth
+    return final_position * final_depth
 
 
 def part_two(command_list):
@@ -36,15 +36,13 @@ def part_two(command_list):
         else:
             raise ValueError("Command not recognized!")
 
-    return final_position, final_depth
+    return final_position * final_depth
 
 
 def main():
     control_list = list_from_file("input.txt")
-    position, depth = part_one(control_list)
-    print(f"Part 1: {position*depth}")
-    position_2, depth_2 = part_two(control_list)
-    print(f"Part 2: {position_2*depth_2}")
+    print(f"Part 1: {part_one(control_list)}")
+    print(f"Part 2: {part_two(control_list)}")
 
 
 if __name__ == "__main__":
