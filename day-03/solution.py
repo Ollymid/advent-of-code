@@ -14,25 +14,25 @@ def part_one() -> int:
 
 def part_two():
     with open("input.txt") as file:
-        lines = [x.strip() for x in file]
+        bins = [x.strip() for x in file]
 
-    o2 = lines
-    co2 = lines
+    o2 = bins
+    co2 = bins
     i = 0
     while len(o2) > 1 or len(co2) > 1:
-        common = max(
+        most_common = max(
             Counter(s[i] for s in o2).items(), key=lambda entry: (entry[1], entry[0])
         )[0]
-        uncommon = min(
+        least_common = min(
             Counter(s[i] for s in co2).items(), key=lambda entry: (entry[1], entry[0])
         )[0]
 
-        o2 = [s for s in o2 if s[i] == common]
-        co2 = [s for s in co2 if s[i] == uncommon]
+        o2 = [s for s in o2 if s[i] == most_common]
+        co2 = [s for s in co2 if s[i] == least_common]
         i += 1
 
-    # common   '010111110111'
-    # uncommon '100111001110'
+    # most common   '010111110111'
+    # least common  '100111001110'
 
     return int(o2[0], 2) * int(co2[0], 2)
 
