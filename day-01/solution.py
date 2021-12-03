@@ -6,7 +6,7 @@ def list_from_file(filename) -> List[int]:
         return [int(x) for x in file.read().split("\n")]
 
 
-def part_one(data: List[int]):
+def part_one(data: List[int]) -> int:
     count = 0
     for i in range(1, len(data)):
         if data[i] > data[i - 1]:
@@ -15,7 +15,7 @@ def part_one(data: List[int]):
     return count
 
 
-def part_two(data: List[int]):
+def part_two(data: List[int]) -> int:
     count = 0
     for i in range(1, len(data)):
         if i > 2:
