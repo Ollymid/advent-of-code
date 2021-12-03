@@ -25,9 +25,9 @@ def part_two(data):
 
 def main():
     depthlist = list_from_file("input.txt")
-    print("Part 1: {}".format(part_one(depthlist)))
+    print(f"Part 1: {part_one(depthlist)}")
 
-    print("Part 2: {}".format(part_two(depthlist)))
+    print(f"Part 2: {part_two(depthlist)}")
 
 
 if __name__ == "__main__":
