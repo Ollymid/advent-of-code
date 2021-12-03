@@ -16,6 +16,10 @@ def part_one(binaries):
     return int(gamma, 2) * int(epsilon, 2)
 
 
+def part_two(binaries):
+    pass
+
+
 def main():
     bin_list = list_from_file("input.txt")
     print(f"Part 1: {part_one(bin_list)}")
