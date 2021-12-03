@@ -1,9 +1,12 @@
-def list_from_file(filename) -> :
+from typing import List
+
+
+def list_from_file(filename) -> List[List[str]]:
     with open(filename) as file:
         return [x.split(" ") for x in file.read().split("\n")]
 
 
-def part_one(command_list):
+def part_one(command_list) -> int:
     final_position = 0
     final_depth = 0
 
@@ -20,7 +23,7 @@ def part_one(command_list):
     return final_position * final_depth
 
 
-def part_two(command_list):
+def part_two(command_list) -> int:
     final_position = 0
     final_depth = 0
     aim = 0

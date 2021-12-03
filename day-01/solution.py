@@ -1,9 +1,12 @@
-def list_from_file(filename):
+from typing import List
+
+
+def list_from_file(filename) -> List[int]:
     with open(filename) as file:
         return [int(x) for x in file.read().split("\n")]
 
 
-def part_one(data):
+def part_one(data: List[int]):
     count = 0
     for i in range(1, len(data)):
         if data[i] > data[i - 1]:
@@ -12,7 +15,7 @@ def part_one(data):
     return count
 
 
-def part_two(data):
+def part_two(data: List[int]):
     count = 0
     for i in range(1, len(data)):
         if i > 2:
@@ -26,7 +29,6 @@ def part_two(data):
 def main():
     depthlist = list_from_file("input.txt")
     print(f"Part 1: {part_one(depthlist)}")
-
     print(f"Part 2: {part_two(depthlist)}")
 
 
